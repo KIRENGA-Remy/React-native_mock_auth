@@ -51,7 +51,7 @@ const RegisterScreen = ({ navigation }) => {
       />
       <Button title="Register" onPress={handleRegister} />
       <Text style={styles.link} onPress={() => navigation.navigate('Login')}>
-        Already have an account? Login here
+        Already have an account? <Text style={styles.linkUrl}>Login here </Text>
       </Text>
     </View>
   );
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginBottom: 20 },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 10, borderRadius: 5 },
   link: { marginTop: 20, textAlign: 'center', color: 'blue' },
+  linkUrl: {fontSize: 16, fontWeight: 'semibold' }
 });
 
 export default RegisterScreen;

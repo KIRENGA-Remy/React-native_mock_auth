@@ -15,13 +15,15 @@ const LoginScreen = ({ navigation }) => {
     }
     setLoading(true)
     try {
-      const response = await axios.post('https://<mock-server-id>.mock.pstmn.io/login', {
+      const response = await axios.post('https://12d26491-4246-4495-be92-32de5d6d6634.mock.pstmn.io/login', {
         email,
         password,
       });
 
       if (response.data.success) {
         Alert.alert('Success', response.data.message);
+        console.log(" log messag ",response.data.message);
+        
       } else {
         Alert.alert('Error', response.data.message);
       }

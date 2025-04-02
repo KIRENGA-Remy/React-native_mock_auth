@@ -28,6 +28,8 @@ const LoginScreen = ({ navigation }) => {
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'An expected error occured';
       Alert.alert('Error', errorMessage)
+    } finally {
+        setLoading(false)
     }
   };
 
@@ -55,7 +57,7 @@ const LoginScreen = ({ navigation }) => {
       onPress={handleLogin} 
       disabled={loading}
       />
-      { loading && <ActivityIndicator style={{ marginTop: 10}} />}
+      { loading && <ActivityIndicator style={{ marginTop: 10}} color={"#0000ff"} />}
       <Text style={styles.link} onPress={() => navigation.navigate('Register')}>
         Don't have an account? <Text style={styles.linkUrl}> Register here </Text>
       </Text>
